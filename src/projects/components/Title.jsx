@@ -4,7 +4,7 @@ export default function Title({ classes, text}) {
   return (
     <h1 className={!classes ? 'title text-center' 
     : classes && 'title'}>
-      {!text ? "Title" : text}
+      {!text ? 'Title' : text}
     </h1>
   )
 }
