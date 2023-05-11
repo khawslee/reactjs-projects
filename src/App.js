@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import SlidetoUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
+import SliderApp from './projects/09-slider/SliderApp';
+// import SlidetoUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
 // import LigthAndDarkMode from './projects/07-light-dark-mode/LigthAndDarkMode';
 // import TemperatureApp from './projects/06-TemperatureControl/TemperatureApp';
 //import RandomizeColor from './projects/02-randomizeColor/RandomizeColor';
@@ -19,7 +20,8 @@ function App() {
       {/* <AlertApp /> */}
       {/* <TemperatureApp /> */}
       {/* <LigthAndDarkMode/> */}
-      <SlidetoUnlock/>
+      {/* <SlidetoUnlock/> */}
+      <SliderApp />
     </div>
   );
 }
