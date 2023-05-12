@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import SliderApp from './projects/09-slider/SliderApp';
+import PopUpApp from './projects/11-popup/PopUpApp';
+// import HiddenSearchBar from './projects/10-hidden-searchbar/HiddenSearchBar';
+// import SliderApp from './projects/09-slider/SliderApp';
 // import SlidetoUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
 // import LigthAndDarkMode from './projects/07-light-dark-mode/LigthAndDarkMode';
 // import TemperatureApp from './projects/06-TemperatureControl/TemperatureApp';
@@ -21,7 +23,9 @@ function App() {
       {/* <TemperatureApp /> */}
       {/* <LigthAndDarkMode/> */}
       {/* <SlidetoUnlock/> */}
-      <SliderApp />
+      {/* <SliderApp /> */}
+      {/* <HiddenSearchBar /> */}
+      <PopUpApp />
     </div>
   );
 }
