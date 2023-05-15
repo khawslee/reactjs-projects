@@ -1,32 +1,49 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import PopUpApp from './projects/11-popup/PopUpApp';
-// import HiddenSearchBar from './projects/10-hidden-searchbar/HiddenSearchBar';
-// import SliderApp from './projects/09-slider/SliderApp';
-// import SlidetoUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
-// import LigthAndDarkMode from './projects/07-light-dark-mode/LigthAndDarkMode';
-// import TemperatureApp from './projects/06-TemperatureControl/TemperatureApp';
-//import RandomizeColor from './projects/02-randomizeColor/RandomizeColor';
-//import LikePhotoApp from './projects/03-likemyphoto/LikePhotoApp';
-//import TestimonialsApp from './projects/04-testimonials/TestimonialsApp';
-// import AlertApp from './projects/05-alert/AlertApp';
-//import EsignatureApp from './projects/01-e-signature/EsignatureApp';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+const RandomizeColor = lazy(() => import("./projects/02-randomizeColor/RandomizeColor"));
+const EsignatureApp = lazy(() => import("./projects/01-e-signature/EsignatureApp"));
 
 function App() {
   return (
-    <div className="App">
-      {/*<EsignatureApp />*/}
-      {/*<RandomizeColor />*/}
-      {/*<LikePhotoApp />*/}
-      {/*<TestimonialsApp />*/}
-      {/* <AlertApp /> */}
-      {/* <TemperatureApp /> */}
-      {/* <LigthAndDarkMode/> */}
-      {/* <SlidetoUnlock/> */}
-      {/* <SliderApp /> */}
-      {/* <HiddenSearchBar /> */}
-      <PopUpApp />
-    </div>
+    <Router>
+      <div>
+        {/* <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/esignature">Esignature</Link>
+            </li>
+            <li>
+              <Link to="/randomizecolor">Randomize Color</Link>
+            </li>
+          </ul>
+        </nav> */}
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/esignature" element={<EsignatureApp />} />
+            <Route path="/randomizecolor" element={<RandomizeColor />} />
+            <Route path="/" element={<div>
+              <h2>Welcome to the homepage</h2>
+              <p>Please select an app to continue:</p>
+              <ul>
+                <li>
+                  <Link to="/esignature">Esignature</Link>
+                </li>
+                <li>
+                  <Link to="/randomizecolor">Randomize Color</Link>
+                </li>
+              </ul>
+            </div>} />
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 
