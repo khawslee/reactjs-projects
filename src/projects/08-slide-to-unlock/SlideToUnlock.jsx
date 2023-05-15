@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import LockSlider from './LockSlider'
 import { AiFillUnlock } from 'react-icons/ai'
 import LockScreenImage from './img/moon.jpg'
 import HomeScreenImage from './img/desktop.jpg'
 
-export default function SlidetoUnlock() {
+export default function SlideToUnlock() {
   const [uiProps, setUiProps] = useState({
     uiText: 'Unlock Screen',
     uiColor: '#eee',
